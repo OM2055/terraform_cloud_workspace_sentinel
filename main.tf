@@ -11,7 +11,7 @@ resource "tfe_organization" "example" {
 resource "tfe_workspace" "example" {
   name         = "example-workspace"
   organization = tfe_organization.example.name
-  # execution_mode = "remote"
+  execution_mode = "remote"
   # vcs_repo {
   #  identifier     = "your-vcs-repo/your-repo-name"  # Replace with your VCS repo path
   #  branch         = "main"  # Replace with the branch name
