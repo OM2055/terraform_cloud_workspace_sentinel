@@ -9,3 +9,8 @@ variable "organization_name" {
     type        = string
   
 }
+
+variable "project_name" {
+    description = "The name of the new Project"
+    type        = string  
+}

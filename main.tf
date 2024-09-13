@@ -16,21 +16,17 @@ data "tfe_organization" "example" {
     name = var.organization_name
   
 }
-#resource "tfe_organization" "example" {
-#  name  = "TCS_BG"  # Replace with your organization name
-#  email = "omkar.singh1@tcs.com"  # Replace with your organization email
-#}
 
+# Project Creation via code
+resource "tfe_project" "example" {
+  name =  "TCS_Test"
+  organization = var.organization_name
+}
+
+# Workspace Creation via code 
 resource "tfe_workspace" "example" {
    name         = "example-workspace"
-   organization = var.organization_name
-
-  # execution_mode = "remote"
-  # vcs_repo {
-  #  identifier     = "your-vcs-repo/your-repo-name"  # Replace with your VCS repo path
-  #  branch         = "main"  # Replace with the branch name
-  #  oauth_token_id = var.oauth_token_id  # OAuth token for connecting VCS
-  # }
+   organization = var.organization_name  
  }
 
 resource "tfe_policy_set" "example" {
