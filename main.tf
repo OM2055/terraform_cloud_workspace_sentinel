@@ -12,6 +12,10 @@ provider "tfe" {
   token    = var.tfe_token
 }
 
+data "tfe_organization" "example" {
+    name = var.organization_name
+  
+}
 #resource "tfe_organization" "example" {
 #  name  = "TCS_BG"  # Replace with your organization name
 #  email = "omkar.singh1@tcs.com"  # Replace with your organization email
@@ -19,7 +23,8 @@ provider "tfe" {
 
 resource "tfe_workspace" "example" {
    name         = "example-workspace"
-   organization = "TCS_BG"
+   organization = var.organization_name
+
   # execution_mode = "remote"
   # vcs_repo {
   #  identifier     = "your-vcs-repo/your-repo-name"  # Replace with your VCS repo path
@@ -30,7 +35,7 @@ resource "tfe_workspace" "example" {
 
 resource "tfe_policy_set" "example" {
   name         = "example-policy-set"
-  organization = "TCS_BG"
+  organization = var.organization_name
   
   # Associate the policy set with the workspace
   workspace_ids = [
