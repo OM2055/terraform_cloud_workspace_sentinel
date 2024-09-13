@@ -30,7 +30,7 @@ resource "tfe_workspace" "example" {
 
 resource "tfe_policy_set" "example" {
   name         = "example-policy-set"
-  # organization = tfe_organization.example.name
+  organization = "TCS_BG"
   
   # Associate the policy set with the workspace
   workspace_ids = [
