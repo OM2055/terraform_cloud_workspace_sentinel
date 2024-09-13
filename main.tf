@@ -40,7 +40,7 @@ resource "tfe_policy_set" "example" {
 #  ]
 
   # Link the policy set to the workspace created above
-  workspace_ids = [
-    tfe_workspace.example.id
-  ]
-}
+  #workspace_ids = [
+  #  tfe_workspace.example.id
+  #]
+# }
