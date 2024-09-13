@@ -22,13 +22,22 @@ resource "tfe_workspace" "example" {
 resource "tfe_policy_set" "example" {
   name         = "example-policy-set"
   organization = tfe_organization.example.name
-
-  policies = [
-    {
-      name    = "enforce-workspace-name"
-      source  = file("${terraform_sentinel_repos}/enforce-workspace-name.sentinel")
-    }
+  
+  # Associate the policy set with the workspace
+  workspace_ids = [
+    tfe_workspace.example.id
   ]
+}
+# resource "tfe_policy_set" "example" {
+#  name         = "example-policy-set"
+#  organization = tfe_organization.example.name
+
+#  policies = [
+#    {
+#      name    = "enforce-workspace-name"
+#      source  = file("${terraform_sentinel_repos}/enforce-workspace-name.sentinel")
+#    }
+#  ]
 
   # Link the policy set to the workspace created above
   workspace_ids = [
