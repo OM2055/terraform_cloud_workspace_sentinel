@@ -26,7 +26,7 @@ provider "tfe" {
   #  branch         = "main"  # Replace with the branch name
   #  oauth_token_id = var.oauth_token_id  # OAuth token for connecting VCS
   # }
-# }
+ }
 
 resource "tfe_policy_set" "example" {
   name         = "example-policy-set"
