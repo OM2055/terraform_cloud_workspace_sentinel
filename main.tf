@@ -3,10 +3,10 @@ provider "tfe" {
   token    = var.tfe_token
 }
 
-resource "tfe_organization" "example" {
-  name  = "TCS_BG"  # Replace with your organization name
-  email = "omkar.singh1@tcs.com"  # Replace with your organization email
-}
+#resource "tfe_organization" "example" {
+#  name  = "TCS_BG"  # Replace with your organization name
+#  email = "omkar.singh1@tcs.com"  # Replace with your organization email
+#}
 
 resource "tfe_workspace" "example" {
   name         = "example-workspace"
