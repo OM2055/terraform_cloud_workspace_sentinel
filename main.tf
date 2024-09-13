@@ -19,7 +19,7 @@ resource "tfe_workspace" "example" {
   # }
 }
 
-resource "tfe_policy_set" "example" {
+resource "tfe_policy_set" "sentinelexample" {
   name         = "example-policy-set"
   organization = tfe_organization.example.name
 
