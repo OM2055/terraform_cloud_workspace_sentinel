@@ -19,7 +19,7 @@ provider "tfe" {
 
 resource "tfe_workspace" "example" {
    name         = "example-workspace"
- # organization = tfe_organization.example.name
+   organization = "TCS_BG"
   # execution_mode = "remote"
   # vcs_repo {
   #  identifier     = "your-vcs-repo/your-repo-name"  # Replace with your VCS repo path
