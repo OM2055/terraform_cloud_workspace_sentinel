@@ -19,22 +19,6 @@ resource "tfe_workspace" "example" {
   # }
 }
 
-resource "tfe_policy_set" "sentinelexample" {
-  name         = "example-policy-set"
-  organization = tfe_organization.example.name
-
-  #vcs_repo {
-  #  identifier     = "your-vcs-repo/sentinel-policies-repo"  # Sentinel policy repo
-  #  branch         = "main"  # Branch where Sentinel policies are stored
-  #  oauth_token_id = var.oauth_token_id
-  # }
-
-  # Link the policy set to the workspace
-  workspace_ids = [
-    tfe_workspace.example.id
-  ]
-}
-
 resource "tfe_policy_set" "example" {
   name         = "example-policy-set"
   organization = tfe_organization.example.name
