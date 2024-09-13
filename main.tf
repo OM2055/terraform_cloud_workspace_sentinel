@@ -17,16 +17,16 @@ provider "tfe" {
 #  email = "omkar.singh1@tcs.com"  # Replace with your organization email
 #}
 
-resource "tfe_workspace" "example" {
-  name         = "example-workspace"
-  organization = tfe_organization.example.name
+#resource "tfe_workspace" "example" {
+ # name         = "example-workspace"
+ # organization = tfe_organization.example.name
   # execution_mode = "remote"
   # vcs_repo {
   #  identifier     = "your-vcs-repo/your-repo-name"  # Replace with your VCS repo path
   #  branch         = "main"  # Replace with the branch name
   #  oauth_token_id = var.oauth_token_id  # OAuth token for connecting VCS
   # }
-}
+# }
 
 resource "tfe_policy_set" "example" {
   name         = "example-policy-set"
